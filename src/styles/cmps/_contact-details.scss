@@ -1,0 +1,17 @@
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .wallpaper {
+        width: 80%;
+        position: absolute;
+        right: 50px;
+        z-index: -1;
+    }
+    > section {
+        display: flex;
+        span {
+            padding-right: 10px;
+        }
+    }
+}
