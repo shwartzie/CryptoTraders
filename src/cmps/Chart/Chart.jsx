@@ -1,27 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client';
 import ReactApexChart from "react-apexcharts";
-import { Sparklines, SparklinesLine } from 'react-sparklines';
-
-// export function Chart(props) {
-
-//     const { name, description, values } = props.data
-//     if (!values) return <div>Loading...</div>
-//     return (
-//         <article className="chart-preview">
-//             <h2>{name}</h2>
-//             <Sparklines data={values} width={100} height={50} margin={5}>
-//                 <SparklinesLine color="blue" />
-//             </Sparklines>
-//             <p>{description}</p>
-//         </article>
-//     )
-// }
 
 export class Chart extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props)
         this.state = {
             options: {
                 chart: {
@@ -59,5 +41,3 @@ export class Chart extends React.Component {
     }
 }
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(Chart);

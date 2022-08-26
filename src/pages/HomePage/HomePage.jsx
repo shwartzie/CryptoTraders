@@ -9,7 +9,7 @@ function HomePagePreview() {
     
     return (
         <div className="homepage-view">
-            <img style={{'z-index': '-1'}} src={img}/>
+            <img style={{'zIndex': '-1'}} src={img} alt=""/>
             <div>
                 <h2>Hello {user.name}</h2>
                 <h2>💰 {user.coins}</h2>

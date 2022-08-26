@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import img from '../../images/wallpaper.png'
 import { contactService } from '../../services/contactService'
-
+import { ContactPreviewDetails } from '../../cmps/ContactList/ContactPreviewDetails.jsx'
 export const DisplayContactDetails = () => {
 
 
@@ -27,43 +27,22 @@ export const DisplayContactDetails = () => {
     }
 
 
-    if (!contact) return <div>Loading...</div>
+    if (!contact) {
+        return <div className='spinner-roller'>Loading...</div>
+    }
+    // const { name, phone, email, imgUrl, balance: { bitcoin, ethereum } } = contact
     return (
-        <div className='contact-details contact-display'>
-            <img  className="wallpaper" src={img}/>
-
-            <section>
-                <h3 style={{'margin-top': '50px'}}>
-                    <span>
-                        Fullname:
-                    </span>
-                     {contact.name}
-                    </h3>
-            </section>
-            <section>
-                <h3>
-                    <span>
-                        Email:
-                    </span>
-                    {contact.email}
-                </h3>
-            </section>
-            <section>
-                <h3>
-                    <span>
-                        <i className="fa-solid fa-phone" style={{ color: 'blue', opacity: '0.6' }}></i>
-                    </span>
-                    {contact.phone}
-                </h3>
-            </section>
-
-            <section className='contact-actions'>
+        <>
+            <article className='contact-actions'>
                 <button onClick={onBack}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
-                <img src={contact.imgUrl} alt="" />
+                <ContactPreviewDetails contact={contact} />
                 <button onClick={() => navigate(`/contact/edit/${contact._id}`)}><i className="fa-solid fa-pen-to-square"></i></button>
-            </section>
+                {/* <aside>
+                    <ContactChart/>
+                </aside> */}
+            </article>
             {/* <Link to='/contact/r3' >Next contact</Link> */}
-        </div>
+        </>
     )
 
 }

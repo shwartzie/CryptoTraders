@@ -5,7 +5,6 @@ export const useForm = (initialState, cb) => {
 
 
     const [fields, setFields] = useState(initialState)
-
     useEffectUpdate(()=>{
         cb?.(fields)
     } ,[fields])
