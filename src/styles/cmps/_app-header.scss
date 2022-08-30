@@ -1,0 +1,27 @@
+.app-header-nav-bar {
+    background: #272727;
+	margin: 0 auto;
+	display: flex;
+	height: 50px;
+	list-style: none;
+	padding: 0;
+	align-items: center;
+	:not(:first-child) {
+		padding-left: 25px;
+	}
+	a {
+		text-decoration: none;
+		color: white;
+		font-weight: 500;
+		font-family: inherit;
+		opacity: 0.6;
+		transition: opacity 0.3s ease;
+		&:focus {
+			opacity: 1;
+		}
+		&:hover {
+			opacity: 1;
+		}
+	}
+	padding-left: calc(100% - 91.9%);
+}

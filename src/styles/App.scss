@@ -18,57 +18,26 @@
 @import './cmps/contact-list-header';
 @import './cmps/contact-display';
 @import './cmps/contact-card';
+@import './cmps/app-header';
+@import './cmps/homepage';
+@import './cmps/app-footer';
 //Spinner Components
 @import './cmps/spinner-roller';
 
-.homepage-view {
-	display: flex;
-	width: 100%;
-	div {
-		text-align: center;
-	}
-	img {
-		position: absolute;
-		z-index: -1;
-		width: 83.7%;
-	}
-	h2,
-	h3 {
-		color: white;
-	}
+
+.homepage-wallpaper {
+	background-image: url('../images/frank-mckenna-OD9EOzfSOh0-unsplash.jpg');
+	background-size: cover;
 }
+
+
 .App {
-	width: 1500px;
 	margin: 0 auto;
 	.layout {
 		margin: 0 auto;
 		width: 1280px;
 		height: 100vh;
-	}
-	ul {
-		margin: 0;
-		display: flex;
-		height: 50px;
-		list-style: none;
-		padding: 0;
-		align-items: center;
-		:not(:first-child) {
-			padding-left: 25px;
-		}
-		a {
-			text-decoration: none;
-			color: #292626;
-			font-weight: 500;
-			font-family: inherit;
-			opacity: 0.6;
-			transition: opacity 0.3s ease;
-			&:focus {
-				opacity: 1;
-			}
-			&:hover {
-				opacity: 1;
-			}
-		}
+		
 	}
 }
 

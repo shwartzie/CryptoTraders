@@ -21,8 +21,8 @@ const gDefaultContacts = [
         "phone": "+1 (968) 593-3824",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -32,8 +32,8 @@ const gDefaultContacts = [
         "phone": "+1 (948) 464-2888",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -43,8 +43,8 @@ const gDefaultContacts = [
         "phone": "+1 (958) 502-3495",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -54,8 +54,8 @@ const gDefaultContacts = [
         "phone": "+1 (911) 475-2312",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -65,8 +65,8 @@ const gDefaultContacts = [
         "phone": "+1 (807) 551-3258",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -76,8 +76,8 @@ const gDefaultContacts = [
         "phone": "+1 (970) 527-3082",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -87,8 +87,8 @@ const gDefaultContacts = [
         "phone": "+1 (952) 501-2678",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -98,8 +98,8 @@ const gDefaultContacts = [
         "phone": "+1 (989) 503-2663",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -109,8 +109,8 @@ const gDefaultContacts = [
         "phone": "+1 (968) 454-3851",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -120,8 +120,8 @@ const gDefaultContacts = [
         "phone": "+1 (986) 545-2166",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -131,8 +131,8 @@ const gDefaultContacts = [
         "phone": "+1 (929) 571-2295",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -142,8 +142,8 @@ const gDefaultContacts = [
         "phone": "+1 (977) 419-3550",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -153,8 +153,8 @@ const gDefaultContacts = [
         "phone": "+1 (963) 471-3181",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -164,8 +164,8 @@ const gDefaultContacts = [
         "phone": "+1 (860) 467-2376",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -175,8 +175,8 @@ const gDefaultContacts = [
         "phone": "+1 (818) 565-2557",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -186,8 +186,8 @@ const gDefaultContacts = [
         "phone": "+1 (807) 597-3629",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -197,8 +197,8 @@ const gDefaultContacts = [
         "phone": "+1 (959) 525-2529",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -208,8 +208,8 @@ const gDefaultContacts = [
         "phone": "+1 (978) 591-2291",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     },
     {
@@ -219,16 +219,17 @@ const gDefaultContacts = [
         "phone": "+1 (842) 587-3812",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": `${utilService.getRandomInt(0, 100)}`,
-            "ethereum" : `${utilService.getRandomInt(0, 100)}`
+            "bitcoin": utilService.getRandomInt(0, 100),
+            "ethereum" :utilService.getRandomInt(0, 100)
         }
     }
 ];
 
 
-const gContacts = _loadContacts()
+const gContacts = loadContacts()
 function query(filterBy) {
-    let contactsToReturn = gContacts;
+    let contactsToReturn = storageService.load(STORAGE_KEY) || gContacts;
+    console.log('contactsToReturn:',contactsToReturn);
     if (filterBy) {
         var { name, phone } = filterBy
         contactsToReturn = gContacts.filter(
@@ -240,7 +241,7 @@ function query(filterBy) {
 }
 
 
-function _loadContacts() {
+function loadContacts() {
     let contacts = storageService.load(STORAGE_KEY)
     if (!contacts || !contacts.length) contacts = gDefaultContacts
     storageService.store(STORAGE_KEY, contacts)
@@ -295,6 +296,7 @@ function _updateContact(contact) {
         const index = gContacts.findIndex(c => contact._id === c._id)
         if (index !== -1) {
             gContacts[index] = contact
+            storageService.store(STORAGE_KEY, gContacts)
         }
         resolve(contact)
     })
@@ -304,6 +306,7 @@ function _addContact(contact) {
     return new Promise((resolve, reject) => {
         contact._id = utilService.makeId()
         gContacts.push(contact)
+        storageService.store(STORAGE_KEY, gContacts)
         resolve(contact)
     })
 }
@@ -316,7 +319,11 @@ function getEmptyContact() {
     return {
         name: '',
         email: '',
-        phone: ''
+        phone: '',
+        balance: {
+            bitcoin: 0,
+            ethereum: 0
+        }
     }
 }
 

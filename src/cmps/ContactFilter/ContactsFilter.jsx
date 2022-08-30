@@ -7,7 +7,6 @@ export const ContactsFilter = memo((props) => {
         phone: ''
     }, props.onChangeFilter)
 
-    console.log('filter rendered')
     return (
         <form className='contact-filter'>
             <section>

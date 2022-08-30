@@ -1,21 +1,31 @@
 const INITIAL_STATE = {
-    loggedInUser: {
-        name: 'Jorji',
-        balance: 100
-    }
+	loggedInUser: null,
 }
 
 export function userReducer(state = INITIAL_STATE, action) {
-    switch (action.type) {
-        case 'SPEND_BALANCE':
-            const { loggedInUser } = state
+	const { loggedInUser } = state
+	switch (action.type) {
+		case 'LOGIN':
+			return {
+				...state,
+				loggedInUser: action.loggedInUser,
+			}
 
-            return {
-                ...state,
-                loggedInUser: { ...loggedInUser, balance: loggedInUser.balance - action.amount }
-            }
+		case 'SPEND_BALANCE':
+			return {
+				...state,
+				loggedInUser: {
+					...loggedInUser,
+					balance: loggedInUser.balance - action.amount,
+				},
+			}
 
-        default:
-           return state
-    }
+		case 'UPDATE_USER':
+			return {
+				...state,
+				loggedInUser: { ...action.loggedInUser },
+			}
+		default:
+			return state
+	}
 }

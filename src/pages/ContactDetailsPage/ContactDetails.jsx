@@ -34,12 +34,16 @@ export const DisplayContactDetails = () => {
     return (
         <>
             <article className='contact-actions'>
-                <button onClick={onBack}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
-                <ContactPreviewDetails contact={contact} />
-                <button onClick={() => navigate(`/contact/edit/${contact._id}`)}><i className="fa-solid fa-pen-to-square"></i></button>
-                {/* <aside>
-                    <ContactChart/>
-                </aside> */}
+                <main>
+                    <div>
+                        <button onClick={onBack}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
+                        <button onClick={() => navigate(`/contact/edit/${contact._id}`)}><i className="fa-solid fa-pen-to-square"></i></button>
+                    </div>
+                    <ContactPreviewDetails contact={contact} />
+                </main>
+                <aside>
+                        
+                </aside>
             </article>
             {/* <Link to='/contact/r3' >Next contact</Link> */}
         </>

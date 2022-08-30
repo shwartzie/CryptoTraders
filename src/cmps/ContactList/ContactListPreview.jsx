@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import img from '../../images/Avatar.png'
 export const ContactListPreview = ({ contact, onRemoveContact, contactPreview }) => {
-    const { name, _id, imgUrl, balance: { bitcoin, etherium } } = contact
+    const { name, _id, imgUrl, balance: { bitcoin, ethereum } } = contact
     const navigate = useNavigate()
     return (
         <section className="contact-display">
@@ -25,6 +25,13 @@ export const ContactListPreview = ({ contact, onRemoveContact, contactPreview })
                             navigate(`/contact/edit/${contact._id}`)
                         }}>
                         <i className="fa-solid fa-pen-to-square"></i>
+                    </button>
+
+                    <button onClick={(ev) => {
+                        ev.stopPropagation()
+                        navigate(`send-currency/${contact._id}`)
+                    }}>
+                        <i className="fa-regular fa-paper-plane"></i>
                     </button>
                 </div>
             </div>

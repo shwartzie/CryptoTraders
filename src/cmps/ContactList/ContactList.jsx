@@ -9,12 +9,10 @@ export const ContactList = (props) => {
     const contacts = useSelector(state => state.contactModule.contacts)
     const navigate = useNavigate()
     const dispatch = useDispatch()
-
     let [contact, setPreview] = useState(null)
 
     useEffect(() => {
         dispatch(loadContacts())
-
     }, [])
 
     const onChangeFilter = useCallback((filterBy) => {
@@ -36,25 +34,26 @@ export const ContactList = (props) => {
         setPreview(contact)
     }
 
-
     return (
-        <div>
-            <div className='contact-list-header-actions'>
-                <ContactsFilter onChangeFilter={onChangeFilter} />
-                <button onClick={onAddContact}> Add Contact </button>
-            </div>
-            <main className='contact-list-layout'>
-                <div className='contact-list-container'>
-                    <>
-                        {contacts?.map(contact =>
-                            <ContactListPreview key={contact._id} contact={contact} onRemoveContact={onRemoveContact} contactPreview={contactPreview} />
-                        )}
-                    </>
+        <div className='contact-list-container'>
+            <div className='layout'>
+                <div className='contact-list-header-actions'>
+                    <ContactsFilter onChangeFilter={onChangeFilter} />
+                    <button onClick={onAddContact}> Add Contact </button>
                 </div>
-                {contact && <article className='contact-modal-preview'>
-                    <ContactPreviewDetails contact={contact}/>
-                </article>}
-            </main>
+                <main className='contact-list-layout'>
+                    <div className='contact-list-main-container'>
+                        <>
+                            {contacts?.map(contact =>
+                                <ContactListPreview key={contact._id} contact={contact} onRemoveContact={onRemoveContact} contactPreview={contactPreview} />
+                            )}
+                        </>
+                    </div>
+                    {contact && <article className='contact-modal-preview'>
+                        <ContactPreviewDetails contact={contact} />
+                    </article>}
+                </main>
+            </div>
         </div>
     )
 

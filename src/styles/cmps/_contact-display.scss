@@ -1,15 +1,22 @@
 .contact-list-layout {
 	display:flex;
 	justify-content: space-between;
+	height:450px;
 	.contact-modal-preview {
 		width: calc((700px - 5%));
 		display:flex;
 	}
 }
 .contact-list-container {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	width: 475px;
+	
+	.contact-list-main-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		width: 500px;
+		overflow-y: auto;
+		max-height: 600px;
+		height: 100%;
+	}
 }
 
 .contact-display {
