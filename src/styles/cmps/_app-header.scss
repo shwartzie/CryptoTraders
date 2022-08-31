@@ -1,5 +1,5 @@
-.app-header-nav-bar {
-    background: #272727;
+.app-header-nav-bar, .footer-layout {
+	background: #272727;
 	margin: 0 auto;
 	display: flex;
 	height: 50px;
@@ -25,3 +25,10 @@
 	}
 	padding-left: calc(100% - 91.9%);
 }
+
+.footer-layout {
+	position: absolute;
+	bottom: 0;
+	width:100%;
+}
+

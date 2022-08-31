@@ -8,7 +8,9 @@ export const contactService = {
     saveContact,
     getEmptyContact,
     query,
-    getContctBalance
+    getContctBalance,
+    getType,
+    saveContacts
 }
 
 const STORAGE_KEY = 'contacts'
@@ -16,7 +18,7 @@ const STORAGE_KEY = 'contacts'
 const gDefaultContacts = [
     {
         "_id": "5a56640269f443a5d64b32ca",
-        "name": "Ochoa Hyde",
+        "fullname": "Ochoa Hyde",
         "email": "ochoahyde@renovize.com",
         "phone": "+1 (968) 593-3824",
         "imgUrl": `${img}`,
@@ -27,7 +29,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a5664025f6ae9aa24a99fde",
-        "name": "Hallie Mclean",
+        "fullname": "Hallie Mclean",
         "email": "halliemclean@renovize.com",
         "phone": "+1 (948) 464-2888",
         "imgUrl": `${img}`,
@@ -38,7 +40,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a56640252d6acddd183d319",
-        "name": "Parsons Norris",
+        "fullname": "Parsons Norris",
         "email": "parsonsnorris@renovize.com",
         "phone": "+1 (958) 502-3495",
         "imgUrl": `${img}`,
@@ -49,7 +51,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a566402ed1cf349f0b47b4d",
-        "name": "Rachel Lowe",
+        "fullname": "Rachel Lowe",
         "email": "rachellowe@renovize.com",
         "phone": "+1 (911) 475-2312",
         "imgUrl": `${img}`,
@@ -60,7 +62,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a566402abce24c6bfe4699d",
-        "name": "Dominique Soto",
+        "fullname": "Dominique Soto",
         "email": "dominiquesoto@renovize.com",
         "phone": "+1 (807) 551-3258",
         "imgUrl": `${img}`,
@@ -71,7 +73,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a566402a6499c1d4da9220a",
-        "name": "Shana Pope",
+        "fullname": "Shana Pope",
         "email": "shanapope@renovize.com",
         "phone": "+1 (970) 527-3082",
         "imgUrl": `${img}`,
@@ -82,7 +84,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a566402f90ae30e97f990db",
-        "name": "Faulkner Flores",
+        "fullname": "Faulkner Flores",
         "email": "faulknerflores@renovize.com",
         "phone": "+1 (952) 501-2678",
         "imgUrl": `${img}`,
@@ -93,7 +95,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a5664027bae84ef280ffbdf",
-        "name": "Holder Bean",
+        "fullname": "Holder Bean",
         "email": "holderbean@renovize.com",
         "phone": "+1 (989) 503-2663",
         "imgUrl": `${img}`,
@@ -104,7 +106,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a566402e3b846c5f6aec652",
-        "name": "Rosanne Shelton",
+        "fullname": "Rosanne Shelton",
         "email": "rosanneshelton@renovize.com",
         "phone": "+1 (968) 454-3851",
         "imgUrl": `${img}`,
@@ -115,7 +117,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a56640272c7dcdf59c3d411",
-        "name": "Pamela Nolan",
+        "fullname": "Pamela Nolan",
         "email": "pamelanolan@renovize.com",
         "phone": "+1 (986) 545-2166",
         "imgUrl": `${img}`,
@@ -126,7 +128,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a5664029a8dd82a6178b15f",
-        "name": "Roy Cantu",
+        "fullname": "Roy Cantu",
         "email": "roycantu@renovize.com",
         "phone": "+1 (929) 571-2295",
         "imgUrl": `${img}`,
@@ -137,7 +139,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a5664028c096d08eeb13a8a",
-        "name": "Ollie Christian",
+        "fullname": "Ollie Christian",
         "email": "olliechristian@renovize.com",
         "phone": "+1 (977) 419-3550",
         "imgUrl": `${img}`,
@@ -148,7 +150,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a5664026c53582bb9ebe9d1",
-        "name": "Nguyen Walls",
+        "fullname": "Nguyen Walls",
         "email": "nguyenwalls@renovize.com",
         "phone": "+1 (963) 471-3181",
         "imgUrl": `${img}`,
@@ -159,7 +161,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a56640298ab77236845b82b",
-        "name": "Glenna Santana",
+        "fullname": "Glenna Santana",
         "email": "glennasantana@renovize.com",
         "phone": "+1 (860) 467-2376",
         "imgUrl": `${img}`,
@@ -170,7 +172,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a56640208fba3e8ecb97305",
-        "name": "Malone Clark",
+        "fullname": "Malone Clark",
         "email": "maloneclark@renovize.com",
         "phone": "+1 (818) 565-2557",
         "imgUrl": `${img}`,
@@ -181,7 +183,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a566402abb3146207bc4ec5",
-        "name": "Floyd Rutledge",
+        "fullname": "Floyd Rutledge",
         "email": "floydrutledge@renovize.com",
         "phone": "+1 (807) 597-3629",
         "imgUrl": `${img}`,
@@ -192,7 +194,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a56640298500fead8cb1ee5",
-        "name": "Grace James",
+        "fullname": "Grace James",
         "email": "gracejames@renovize.com",
         "phone": "+1 (959) 525-2529",
         "imgUrl": `${img}`,
@@ -203,7 +205,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a56640243427b8f8445231e",
-        "name": "Tanner Gates",
+        "fullname": "Tanner Gates",
         "email": "tannergates@renovize.com",
         "phone": "+1 (978) 591-2291",
         "imgUrl": `${img}`,
@@ -214,7 +216,7 @@ const gDefaultContacts = [
     },
     {
         "_id": "5a5664025c3abdad6f5e098c",
-        "name": "Lilly Conner",
+        "fullname": "Lilly Conner",
         "email": "lillyconner@renovize.com",
         "phone": "+1 (842) 587-3812",
         "imgUrl": `${img}`,
@@ -225,15 +227,21 @@ const gDefaultContacts = [
     }
 ];
 
+function getType () {
+    return {
+        CONTACT: 'contact'
+    }
+}
 
 const gContacts = loadContacts()
+
+
 function query(filterBy) {
     let contactsToReturn = storageService.load(STORAGE_KEY) || gContacts;
-    console.log('contactsToReturn:',contactsToReturn);
     if (filterBy) {
-        var { name, phone } = filterBy
+        var { fullname, phone } = filterBy
         contactsToReturn = gContacts.filter(
-            contact => contact.name.toLowerCase().includes(name.toLowerCase())
+            contact => contact.fullname.toLowerCase().includes(fullname.toLowerCase())
                 && contact.phone.toLowerCase().includes(phone.toLowerCase())
         )
     }
@@ -248,14 +256,17 @@ function loadContacts() {
     return contacts
 }
 
-
+function saveContacts (contacts) {
+    storageService.store(STORAGE_KEY, contacts)
+    return Promise.resolve([...contacts]);
+}
 
 function sort(arr) {
     return arr.sort((a, b) => {
-        if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) {
+        if (a.fullname.toLocaleLowerCase() < b.fullname.toLocaleLowerCase()) {
             return -1;
         }
-        if (a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase()) {
+        if (a.fullname.toLocaleLowerCase() > b.fullname.toLocaleLowerCase()) {
             return 1;
         }
 
@@ -317,12 +328,20 @@ function saveContact(contact) {
 
 function getEmptyContact() {
     return {
-        name: '',
+        fullname: '',
         email: '',
         phone: '',
         balance: {
             bitcoin: 0,
             ethereum: 0
+        },
+        movements: {
+            sells: 0,
+            buys: 0,
+            trades: 0,
+            datesWhenTraded: [],
+            transfers: [],
+            profit: 0
         }
     }
 }
@@ -330,7 +349,7 @@ function getEmptyContact() {
 function filter(term) {
     term = term.toLocaleLowerCase()
     return gContacts.filter(contact => {
-        return contact.name.toLocaleLowerCase().includes(term) ||
+        return contact.fullname.toLocaleLowerCase().includes(term) ||
             contact.phone.toLocaleLowerCase().includes(term) ||
             contact.email.toLocaleLowerCase().includes(term)
     })

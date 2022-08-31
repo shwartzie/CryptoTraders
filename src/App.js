@@ -7,17 +7,9 @@ import { ContactEdit } from './pages/ContactEditPage/ContactEdit'
 import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
 import { TransferForm } from './cmps/TransferForm'
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  NavLink,
-} from 'react-router-dom'
-
-function App() {
-
-
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { UserProfile } from './pages/UserProfilePage/UserProfile'
+export const App = () => {
   return (
     <Router>
       <div className="App">
@@ -30,11 +22,10 @@ function App() {
           <Route exact path='/contact/:id' element={< DisplayContactDetails />}></Route>
           <Route exact path='/statistics/' element={< StatisticPage />}></Route>
           <Route exact path='/contacts/send-currency/:id' element={< TransferForm />}></Route>
+          <Route exact path='/profile/:id' element={<UserProfile />}></Route>
         </Routes>
         <AppFooter />
       </div>
     </Router>
   )
 }
-
-export default App

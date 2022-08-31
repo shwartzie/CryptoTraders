@@ -12,8 +12,8 @@ export const TransferForm = () => {
     const [loggedInUser, setLoggedinUser] = useState(null)
     const [bitcoinOpts, setBitcoinOpts] = useState([])
     const [ethOpts, setEthOpts] = useState([])
-    const [bitcoinSelected, setSelectedBitcoin] = useState(0)
-    const [ethSelected, setSelectedEth] = useState(0)
+    const [ethVal, setEthVal] = useState(0)
+    const [bitcoinVal, setBitcoinVal] = useState(0)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -30,18 +30,26 @@ export const TransferForm = () => {
         })
     }, [])
 
+    const handleSelectedValues = (ev) => {
+        handleChange(ev)
+
+        if (ev.target.name === 'send-bitcoin') {
+            setBitcoinVal(ev.target.value)
+        } else if (ev.target.name === 'send-ethereum') {
+            setEthVal(ev.target.value)
+        }
+    }
+
     const loadContact = async () => {
         const contactId = params.id
         const contact = contactId && await contactService.getContactById(contactId)
         setContact(contact)
     }
+
     const onSendCurrency = async (ev) => {
         ev.preventDefault()
-        setSelectedBitcoin(bitcoinSelected)
-        setSelectedEth(ethSelected)
-
-        await dispatch(decreaseBalance(loggedInUser, ethSelected, bitcoinSelected))
-        await dispatch(addBalance(contact, ethSelected, bitcoinSelected))
+        await dispatch(decreaseBalance(loggedInUser, ethVal, bitcoinVal))
+        await dispatch(addBalance(contact))
         navigate(-1)
     }
     const createOptions = (user) => {
@@ -61,39 +69,30 @@ export const TransferForm = () => {
 
         setBitcoinOpts(bitt)
         setEthOpts(ethh)
-        
     }
 
-    const onBack = (ev) => {
-        navigate(-1)
-    }
+    const onBack = () => navigate(-1)
+
 
     if (!contact || !loggedInUser) return <div className='spinner-roller'>Loading...</div>
     return (
         <div>
-            {loggedInUser && contact && (bitcoinOpts && ethOpts) && (<form className='contact-filter column' onSubmit={onSendCurrency}>
+            {loggedInUser && contact && (bitcoinOpts && ethOpts) && 
+            (<form className='contact-filter column' onSubmit={onSendCurrency}>
                 <section>
-                    <select name="send-bitcoin" id="send-bitcoin" onChange={handleChange}>
+                    <label htmlFor="send-bitcoin">Transfer Bitcoin</label>
+                    <select name="send-bitcoin" id="send-bitcoin" onChange={handleSelectedValues}>
                         {(bitcoinOpts.map((val, idx) => {
                             return <option key={`bitcoin-${idx}`} value={val}>{val}</option>
                         }))}
                     </select>
-                    <select name="send-ethereum" id="send-ethereum" onChange={handleChange}>
+                    <label htmlFor="send-ethereum">Transfer Ethereum</label>
+                    <select name="send-ethereum" id="send-ethereum" onChange={handleSelectedValues}>
                         {(ethOpts.map((val, idx) => {
                             return <option key={`eth-${idx}`} value={val}>{val}</option>
                         }))}
                     </select>
                 </section>
-                {/* <section>
-                    <label htmlFor="bitcoin">Deposit Bitcoin</label>
-                    <input value={loggedInUser.balance.bitcoin} onChange={handleChange}
-                        type="number" name="bitcoin" id="bitcoin" />
-                </section>
-                <section>
-                    <label htmlFor="ethereum">Deposit Ethereum</label>
-                    <input value={loggedInUser.balance.ethereum} onChange={handleChange}
-                        type="number" name="ethereum" id="ethereum" />
-                </section> */}
                 <div className='contact-actions'>
                     <button onClick={onBack}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
                     <button>Save</button>

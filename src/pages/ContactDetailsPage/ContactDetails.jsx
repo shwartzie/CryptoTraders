@@ -42,7 +42,7 @@ export const DisplayContactDetails = () => {
                     <ContactPreviewDetails contact={contact} />
                 </main>
                 <aside>
-                        
+                    
                 </aside>
             </article>
             {/* <Link to='/contact/r3' >Next contact</Link> */}

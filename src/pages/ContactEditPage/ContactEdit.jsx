@@ -39,7 +39,7 @@ export const ContactEdit = () => {
     if (!contact) return <div className='spinner-roller'>Loading...</div>
 
     return (
-        <section className='contact-edit'>
+        <section className='contact-edit layout'>
             <h1>{contact._id ? 'Edit' : 'Add'} Contact</h1>
             <form className='contact-filter column' onSubmit={onSaveContact}>
                 <section>
@@ -55,12 +55,12 @@ export const ContactEdit = () => {
                         type="text" placeholder='Phone' name="phone" id="phone" />
                 </section>
                 <section>
-                    <label htmlFor="bitcoin">Deposit Bitcoin</label>
+                    <label htmlFor="bitcoin">{contact._id ? 'Change' : 'Add'} Bitcoin Amount</label>
                     <input value={contact.balance.bitcoin} onChange={handleChange}
                         type="number" name="bitcoin" id="bitcoin" />
                 </section>
                 <section>
-                    <label htmlFor="ethereum">Deposit Ethereum</label>
+                    <label htmlFor="ethereum">{contact._id ? 'Change' : 'Add'} Ethereum Amount</label>
                     <input value={contact.balance.ethereum} onChange={handleChange}
                         type="number" name="ethereum" id="ethereum" />
                 </section>

@@ -10,7 +10,12 @@ export function contactReducer(state = INITIAL_STATE, action) {
 				...state,
 				contacts: action.contacts,
 			}
-
+		case 'UPDATE_CONTACTS':
+			console.log('action:',action);
+			return {
+				...state,
+				contacts: action.contacts,
+			}
 		case 'ADD_CONTACT':
 			return {
 				...state,

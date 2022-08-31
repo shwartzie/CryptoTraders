@@ -1,6 +1,6 @@
 import bitcoinImg from '../../images/bitcoin.png'
 import ethImg from '../../images/ethereum.png'
-export const ContactPreviewDetails = ({ contact: { name, phone, email, imgUrl, balance: { bitcoin, ethereum } } }) => {
+export const ContactPreviewDetails = ({ contact: { fullname, phone, email, imgUrl, balance: { bitcoin, ethereum } } }) => {
     return (
         <div>
             <div className="wrapper">
@@ -9,7 +9,7 @@ export const ContactPreviewDetails = ({ contact: { name, phone, email, imgUrl, b
                 </div>
                 <div className="product-info">
                     <div className="product-text">
-                        <h1>{name}</h1>
+                        <h1>{fullname}</h1>
                         <h2>Great Trader</h2>
                         <p> <span>{email}</span> <br /> <span>Phone number: {phone}</span></p>
                         <h2>Balance</h2>

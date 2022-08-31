@@ -1,15 +1,22 @@
 import { useNavigate } from "react-router-dom"
 import img from '../../images/Avatar.png'
+
+
 export const ContactListPreview = ({ contact, onRemoveContact, contactPreview }) => {
-    const { name, _id, imgUrl, balance: { bitcoin, ethereum } } = contact
+    const { fullname, _id, imgUrl, balance: { bitcoin, ethereum } } = contact
     const navigate = useNavigate()
+
     return (
         <section className="contact-display">
-            <div onClick={() => navigate(`/contact/${_id}`)} onMouseEnter={() => contactPreview(contact)}
-                onMouseLeave={() => contactPreview(false)}>
+            <div
+               
+                onClick={() => navigate(`/contact/${_id}`)} onMouseEnter={() => contactPreview(contact)}
+                onMouseLeave={() => contactPreview(false)}
+            >
+                
                 <div className="contact-display-name-url">
                     <img src={imgUrl ? imgUrl : img} alt="" />
-                    <span>{name}</span>
+                    <span>{fullname}</span>
                 </div>
 
                 <div className="contact-display-actions">

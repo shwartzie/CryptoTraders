@@ -1,14 +1,10 @@
 import { useEffect } from "react";
 import { connect, useSelector, useDispatch } from "react-redux";
-import { NavLink, useNavigate, withRouter } from "react-router-dom";
 import { login } from '../../store/actions/userActions'
-import bitcoinImg from '../../images/bitcoin.png'
-import ethImg from '../../images/ethereum.png'
 
 function HomePagePreview() {
     const { loggedInUser } = useSelector(state => state.userModule)
     const dispatch = useDispatch()
-
     useEffect(() => {
         dispatch(login())
     }, [])
@@ -16,29 +12,26 @@ function HomePagePreview() {
     return (
         <main className="homepage-wallpaper">
             {loggedInUser && <section className='layout homepage-view'>
-                <div >
-                    <h1>Welcome Back {loggedInUser.fullname} ! </h1>
-                    <div className="balance-icons">
-                        <span>
-                            <img src={bitcoinImg} height="30" width="30" alt="" />
-                            {loggedInUser.balance.bitcoin}
-                        </span>
-                        <span>
-                            <img src={ethImg} height="30" width="30" alt="" />
-                            {loggedInUser.balance.ethereum}
-                        </span>
-                    </div>
-                </div>
-
                 <section className="hero">
-                    <h1>The best market place in the space</h1>
-                    <h2>You are able to trade with everyone around the globe!
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Perferendis repudiandae consequuntur libero in necessitatibus,
-                        quae voluptates adipisci, eum nulla accusantium saepe numquam earum!
-                        Officiis quas nihil quo, eveniet et ratione?
-                    </h2>
-
+                    <h1>Buy, trade, and hold 350+ cryptocurrencies on CryptoTraders</h1>
+                </section>
+                <section className="website-details">
+                    <div >
+                        <h2>$76 billion</h2>
+                        <h4>24h trading volume on CryptoTraders exchange</h4>
+                    </div>
+                    <div >
+                        <h2>350+</h2>
+                        <h4>Cryptocurrencies listed</h4>
+                    </div>
+                    <div >
+                        <h2>90 million</h2>
+                        <h4>Registered users who trust CryptoTraders</h4>
+                    </div>
+                    <div >
+                        <h2>0.10%</h2>
+                        <h4>Lowest transaction fees</h4>
+                    </div>
                 </section>
             </section>}
 
@@ -48,3 +41,15 @@ function HomePagePreview() {
 }
 
 export default HomePagePreview
+
+
+{/* <div className="balance-icons">
+                        <span>
+                            <img src={bitcoinImg} height="30" width="30" alt="" />
+                            {loggedInUser.balance.bitcoin}
+                        </span>
+                        <span>
+                            <img src={ethImg} height="30" width="30" alt="" />
+                            {loggedInUser.balance.ethereum}
+                        </span>
+                    </div> */}

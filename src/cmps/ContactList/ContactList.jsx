@@ -1,19 +1,29 @@
-import { useCallback, useEffect, useState } from 'react'
+import { createRef, forwardRef, useCallback, useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ContactListPreview } from './ContactListPreview'
-import { setFilterBy, loadContacts, removeContact } from '../../store/actions/contactActions'
+import { setFilterBy, loadContacts, removeContact, updateContacts } from '../../store/actions/contactActions'
 import { ContactsFilter } from '../ContactFilter/ContactsFilter'
 import { useNavigate } from "react-router-dom"
 import { ContactPreviewDetails } from './ContactPreviewDetails.jsx'
-export const ContactList = (props) => {
+import { Droppable, Draggable } from 'react-beautiful-dnd'
+import { contactService } from '../../services/contactService'
+import { DragDropContext } from 'react-beautiful-dnd'
+
+export const ContactList = () => {
     const contacts = useSelector(state => state.contactModule.contacts)
     const navigate = useNavigate()
     const dispatch = useDispatch()
     let [contact, setPreview] = useState(null)
-
+    const updatedContacts = contacts && contacts.slice()
     useEffect(() => {
         dispatch(loadContacts())
     }, [])
+
+    const updateList = ({index: srcIdx}, destination) => {
+        if(!destination) return contacts
+        updatedContacts.splice(srcIdx, 0, updatedContacts.splice(destination.index, 1)[0])
+        return updatedContacts
+    }
 
     const onChangeFilter = useCallback((filterBy) => {
         dispatch(setFilterBy(filterBy))
@@ -34,29 +44,60 @@ export const ContactList = (props) => {
         setPreview(contact)
     }
 
-    return (
-        <div className='contact-list-container'>
-            <div className='layout'>
-                <div className='contact-list-header-actions'>
-                    <ContactsFilter onChangeFilter={onChangeFilter} />
-                    <button onClick={onAddContact}> Add Contact </button>
-                </div>
-                <main className='contact-list-layout'>
-                    <div className='contact-list-main-container'>
-                        <>
-                            {contacts?.map(contact =>
-                                <ContactListPreview key={contact._id} contact={contact} onRemoveContact={onRemoveContact} contactPreview={contactPreview} />
-                            )}
-                        </>
-                    </div>
-                    {contact && <article className='contact-modal-preview'>
-                        <ContactPreviewDetails contact={contact} />
-                    </article>}
-                </main>
-            </div>
-        </div>
-    )
 
+    return (
+        <DragDropContext onDragEnd={({ source, destination }) => {
+            dispatch(updateContacts(updateList(source, destination), contacts))
+        }}>
+            <div className='contact-list-container'>
+                <div className='layout'>
+                    <div className='contact-list-header-actions'>
+                        <ContactsFilter onChangeFilter={onChangeFilter} />
+                        <button onClick={onAddContact}> Add Contact </button>
+                    </div>
+                    <main className='contact-list-layout'>
+                        <Droppable droppableId='droppable-1'>
+                            {(providedDroppable, snapshot) => (
+                                <div
+                                    className='contact-list-main-container'
+                                    ref={providedDroppable.innerRef}
+                                    {...providedDroppable.droppableProps}
+                                >
+                                    {contacts && contacts.map((contact, index) => (
+                                        <Draggable
+                                            key={contact._id}
+                                            draggableId={`draggable-${contact._id}`}
+                                            index={index}
+                                        >
+                                            {(providedDraggable, snapshot) => (
+                                                <div ref={providedDraggable.innerRef}
+                                                    {...providedDraggable.draggableProps}
+                                                    {...providedDraggable.dragHandleProps}
+
+                                                >
+                                                    <ContactListPreview
+                                                        contact={contact}
+                                                        onRemoveContact={onRemoveContact}
+                                                        contactPreview={contactPreview}
+                                                    />
+                                                    {providedDroppable.placeholder}
+
+                                                </div>
+                                            )}
+                                        </Draggable>
+                                    )
+                                    )}
+                                </div>
+                            )}
+                        </Droppable>
+                        {contact && <article className='contact-modal-preview'>
+                            <ContactPreviewDetails contact={contact} />
+                        </article>}
+                    </main>
+                </div>
+            </div >
+        </DragDropContext>
+    )
 }
 
 
