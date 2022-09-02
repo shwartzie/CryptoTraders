@@ -4,6 +4,7 @@ import { ContactPreviewDetails } from "../../cmps/ContactList/ContactPreviewDeta
 import { useEffect } from "react";
 import { useForm } from "../../customHooks/useForm";
 import { depositCurrency } from "../../store/actions/userActions";
+import { ContactMovements } from "../ContactDetailsPage/ContactMovements.jsx"
 export const UserProfile = () => {
     const { loggedInUser } = useSelector(state => state.userModule)
     const navigate = useNavigate()
@@ -20,11 +21,13 @@ export const UserProfile = () => {
         navigate('/')
     }
     return (
-        <div>
+        <div className="user-profile-container">
             {loggedInUser && <article className='contact-modal-preview'>
                 <ContactPreviewDetails contact={loggedInUser} />
+                <ContactMovements contact={loggedInUser}/>
             </article>}
-            {user && <section className='contact-edit '>
+
+            {user && <section className='contact-edit layout'>
                 <form className='contact-filter column' onSubmit={onDeposit}>
                     <section>
                         <label htmlFor="bitcoin">Deposit Bitcoin</label>
@@ -42,6 +45,7 @@ export const UserProfile = () => {
                     </div>
                 </form>
             </section>}
+            
         </div>
     )
 }

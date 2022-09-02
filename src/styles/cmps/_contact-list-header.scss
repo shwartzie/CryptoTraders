@@ -17,11 +17,9 @@
     height: calc(100vh - 30%);
     align-content: center;
     align-items: center;
-	.contact-modal-preview {
-		width: calc((700px - 5%));
-		display:flex;
-	}
 }
+
+
 .contact-list-container {
 	.contact-list-main-container {
 		display: grid;

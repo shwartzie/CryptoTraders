@@ -19,12 +19,12 @@ async function login() {
             ethereum: 10
         },
         movements: {
-            sells: 0,
-            buys: 0,
-            trades: 0,
+            sells: _generateRandomAmount(),
+            buys: _generateRandomAmount(),
+            trades: _generateRandomAmount(),
             datesWhenTraded: [],
-            transfers: [],
-            profit: 0
+            transfers: _generateRandomAmount(),
+            profit: _generateRandomAmount()
         }
     }
     return saveLocalUser(user)
@@ -39,6 +39,13 @@ function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 
+function _generateRandomAmount (a = 1, b = 1000) {
+    const container = []
+    for(let i = 0; i < 10; i++) {
+        container.push(utilService.getRandomInt(a, b))
+    }
+    return container
+}
 
 
 
