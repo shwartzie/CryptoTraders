@@ -20,7 +20,7 @@ export const useFormRegister = (initialState, cb) => {
     const register = (field) => {
         return {
             onChange: handleChange,
-            name: field, 
+            fullname: field, 
             id: field,
             value: fields[field]
         }

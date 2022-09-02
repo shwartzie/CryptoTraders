@@ -11,7 +11,6 @@ export function contactReducer(state = INITIAL_STATE, action) {
 				contacts: action.contacts,
 			}
 		case 'UPDATE_CONTACTS':
-			console.log('action:',action);
 			return {
 				...state,
 				contacts: action.contacts,

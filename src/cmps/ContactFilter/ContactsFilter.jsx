@@ -3,7 +3,7 @@ import { useFormRegister } from '../../customHooks/useFormRegister';
 export const ContactsFilter = memo((props) => {
 
     const [register] = useFormRegister({
-        name: '',
+        fullname: '',
         phone: '',
         balance: {
             bitcoin: 0,
@@ -14,10 +14,10 @@ export const ContactsFilter = memo((props) => {
     return (
         <form className='contact-filter'>
             <section>
-                <input {...register('name')} type='text' placeholder='Search by name...' />
+                <input {...register('fullname')} type='text' name="fullname" placeholder='Search by name...' />
             </section>
             <section>
-                <input {...register('phone')} type="text" placeholder='Search by phone number...' />
+                <input {...register('phone')} type="text" ame="phone" placeholder='Search by phone number...' />
             </section>
             {/* <section>
                 <input {...register('bitcoin')} type='number' placeholder='Filter by highest bitcoin holder...'/>

@@ -1,6 +1,7 @@
 import bitcoinImg from '../../images/bitcoin.png'
 import ethImg from '../../images/ethereum.png'
 export const ContactPreviewDetails = ({ contact: { fullname, phone, email, imgUrl, balance: { bitcoin, ethereum } } }) => {
+    console.log(bitcoin);
     return (
         <div>
             <div className="wrapper">

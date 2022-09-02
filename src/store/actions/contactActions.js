@@ -43,6 +43,7 @@ export const addContact = (newContact) => (async (dispatch) => {
 export const setFilterBy = (filterBy) => (dispatch) =>
 	dispatch({ type: 'SET_FILTER_BY', filterBy })
 
+	
 export const updateContacts = (updatedContacts, prevContacts) => (async (dispatch) => {
 	try {
 		const contacts = await contactService.saveContacts(updatedContacts)

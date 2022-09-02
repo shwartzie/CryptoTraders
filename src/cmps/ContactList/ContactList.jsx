@@ -6,7 +6,6 @@ import { ContactsFilter } from '../ContactFilter/ContactsFilter'
 import { useNavigate } from "react-router-dom"
 import { ContactPreviewDetails } from './ContactPreviewDetails.jsx'
 import { Droppable, Draggable } from 'react-beautiful-dnd'
-import { contactService } from '../../services/contactService'
 import { DragDropContext } from 'react-beautiful-dnd'
 
 export const ContactList = () => {
@@ -19,9 +18,12 @@ export const ContactList = () => {
         dispatch(loadContacts())
     }, [])
 
-    const updateList = ({index: srcIdx}, destination) => {
-        if(!destination) return contacts
-        updatedContacts.splice(srcIdx, 0, updatedContacts.splice(destination.index, 1)[0])
+    const updateList = ({ index: srcIdx }, destination) => {
+        const { index: destIdx } = destination
+        if (!destination) return contacts
+
+        const [contact] = updatedContacts.splice(srcIdx, 1)
+        updatedContacts.splice(destIdx, 0, contact)
         return updatedContacts
     }
 
@@ -44,6 +46,17 @@ export const ContactList = () => {
         setPreview(contact)
     }
 
+    //dnd styling
+    const grid = 8
+    const getListStyle = isDraggingOver => ({
+        background: isDraggingOver ? "lightblue" : "white",
+    })
+    const getItemStyle = (isDragging, draggableStyle) => ({
+        userSelect: "none",
+        margin: `0 0 ${grid}px 0`,
+        background: isDragging ? "lightgreen" : "white",
+        ...draggableStyle
+    })
 
     return (
         <DragDropContext onDragEnd={({ source, destination }) => {
@@ -61,7 +74,7 @@ export const ContactList = () => {
                                 <div
                                     className='contact-list-main-container'
                                     ref={providedDroppable.innerRef}
-                                    {...providedDroppable.droppableProps}
+                                    style={getListStyle(snapshot.isDraggingOver)}
                                 >
                                     {contacts && contacts.map((contact, index) => (
                                         <Draggable
@@ -70,15 +83,20 @@ export const ContactList = () => {
                                             index={index}
                                         >
                                             {(providedDraggable, snapshot) => (
-                                                <div ref={providedDraggable.innerRef}
+                                                <div
+                                                    ref={providedDraggable.innerRef}
                                                     {...providedDraggable.draggableProps}
                                                     {...providedDraggable.dragHandleProps}
-
+                                                    style={getItemStyle(
+                                                        snapshot.isDragging,
+                                                        providedDraggable.draggableProps.style
+                                                    )}
                                                 >
                                                     <ContactListPreview
                                                         contact={contact}
                                                         onRemoveContact={onRemoveContact}
                                                         contactPreview={contactPreview}
+                                                        
                                                     />
                                                     {providedDroppable.placeholder}
 

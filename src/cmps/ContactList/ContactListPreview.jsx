@@ -5,7 +5,6 @@ import img from '../../images/Avatar.png'
 export const ContactListPreview = ({ contact, onRemoveContact, contactPreview }) => {
     const { fullname, _id, imgUrl, balance: { bitcoin, ethereum } } = contact
     const navigate = useNavigate()
-
     return (
         <section className="contact-display">
             <div

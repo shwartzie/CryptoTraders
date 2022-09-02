@@ -10,3 +10,28 @@
         
     }
 }
+
+.contact-list-layout {
+	display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 30%);
+    align-content: center;
+    align-items: center;
+	.contact-modal-preview {
+		width: calc((700px - 5%));
+		display:flex;
+	}
+}
+.contact-list-container {
+	.contact-list-main-container {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		width: 400px;
+		overflow-y: auto;
+		max-height: 800px;
+		height: 100%;
+        padding-top:10px;
+        border: 1px #00000021 solid;
+        border-radius:3px;
+	}
+}

@@ -23,8 +23,16 @@ const gDefaultContacts = [
         "phone": "+1 (968) 593-3824",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": [],
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -34,8 +42,16 @@ const gDefaultContacts = [
         "phone": "+1 (948) 464-2888",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": [],
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -45,8 +61,16 @@ const gDefaultContacts = [
         "phone": "+1 (958) 502-3495",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": [],
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -56,8 +80,16 @@ const gDefaultContacts = [
         "phone": "+1 (911) 475-2312",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": [],
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -67,8 +99,16 @@ const gDefaultContacts = [
         "phone": "+1 (807) 551-3258",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": [],
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -78,8 +118,16 @@ const gDefaultContacts = [
         "phone": "+1 (970) 527-3082",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": _generateRandomAmountOfDates(),
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -89,8 +137,16 @@ const gDefaultContacts = [
         "phone": "+1 (952) 501-2678",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": _generateRandomAmountOfDates(),
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -100,8 +156,16 @@ const gDefaultContacts = [
         "phone": "+1 (989) 503-2663",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": _generateRandomAmountOfDates(),
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -111,8 +175,16 @@ const gDefaultContacts = [
         "phone": "+1 (968) 454-3851",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": _generateRandomAmountOfDates(),
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -122,8 +194,16 @@ const gDefaultContacts = [
         "phone": "+1 (986) 545-2166",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": _generateRandomAmountOfDates(),
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -133,8 +213,16 @@ const gDefaultContacts = [
         "phone": "+1 (929) 571-2295",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": _generateRandomAmountOfDates(),
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -144,8 +232,16 @@ const gDefaultContacts = [
         "phone": "+1 (977) 419-3550",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": _generateRandomAmountOfDates(),
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -155,8 +251,16 @@ const gDefaultContacts = [
         "phone": "+1 (963) 471-3181",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": _generateRandomAmountOfDates(),
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -166,8 +270,16 @@ const gDefaultContacts = [
         "phone": "+1 (860) 467-2376",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": _generateRandomAmountOfDates(),
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -177,8 +289,16 @@ const gDefaultContacts = [
         "phone": "+1 (818) 565-2557",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": _generateRandomAmountOfDates(),
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -188,8 +308,16 @@ const gDefaultContacts = [
         "phone": "+1 (807) 597-3629",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": _generateRandomAmountOfDates(),
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -199,8 +327,16 @@ const gDefaultContacts = [
         "phone": "+1 (959) 525-2529",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": _generateRandomAmountOfDates(),
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -210,8 +346,16 @@ const gDefaultContacts = [
         "phone": "+1 (978) 591-2291",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": _generateRandomAmountOfDates(),
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     },
     {
@@ -221,8 +365,16 @@ const gDefaultContacts = [
         "phone": "+1 (842) 587-3812",
         "imgUrl": `${img}`,
         "balance": {
-            "bitcoin": utilService.getRandomInt(0, 100),
-            "ethereum" :utilService.getRandomInt(0, 100)
+            "bitcoin": _genterateRandomInt(1, 100),
+            "ethereum" : _genterateRandomInt(1, 100)
+        }, 
+        "movements": {
+            "sells": _generateRandomAmount(),
+            "buys": _generateRandomAmount(),
+            "trades": _generateRandomAmount(),
+            "datesWhenTraded": _generateRandomAmountOfDates(),
+            "transfers": _generateRandomAmount(),
+            "profit": _generateRandomAmount()
         }
     }
 ];
@@ -231,6 +383,27 @@ function getType () {
     return {
         CONTACT: 'contact'
     }
+}
+
+function _generateRandomAmount (a = 1, b = 1000) {
+    const container = []
+    for(let i = 0; i < 10; i++) {
+        container.push(utilService.getRandomInt(a, b))
+    }
+    return container
+}
+
+function _genterateRandomInt(a = 1, b = 100) {
+    return utilService.getRandomInt(a, b)
+}
+
+function _generateRandomAmountOfDates() {
+    const container = []
+    for(let i = 0; i < utilService.getRandomInt(5, 15); i++) {
+        const timestamp = utilService.getRandomInt(100000, 1000000000)
+        container.push(new Date(timestamp))
+    }
+    return container
 }
 
 const gContacts = loadContacts()
